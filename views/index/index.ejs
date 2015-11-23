@@ -1,0 +1,178 @@
+    <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-4 col-sm-5">
+
+            <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Total stats</u>
+              </h4>
+
+              <div class="portlet-body">                
+              
+                <p>These domain statistics are for the following tlds: .com/net/org/us/eu/co/io/de/ie/pw/ee/me/hu/yt/im for now.<br />(Gathering more and more every day)</p>
+
+                <hr>
+                
+                <table class="table keyvalue-table">
+                  <tbody>
+                    <tr>
+                      <td class="kv-key"><i class="fa fa-thumbs-up kv-icon kv-icon-success"></i> 2 letter domains</td>
+                      <td class="kv-value"><a href="#" class="letters" data-letter="2">Loading...</a></td>
+                    </tr>
+                    <tr>
+                      <td class="kv-key"><i class="fa fa-thumbs-up kv-icon kv-icon-success"></i> 3 letter domains</td>
+                      <td class="kv-value"><a href="#" class="letters" data-letter="3">Loading...</a></td>
+                    </tr>
+                    <tr>
+                      <td class="kv-key"><i class="fa fa-thumbs-up kv-icon kv-icon-success"></i> 4 letter domains</td>
+                      <td class="kv-value"><a href="#" class="letters" data-letter="4">Loading...</a></td>
+                    </tr>
+                    <tr>
+                      <td class="kv-key"><i class="fa fa-database kv-icon kv-icon-secondary"></i> Total processed</td>
+                      <td class="kv-value" id="domainsCount">Loading... </td>
+                    </tr>
+                    <tr>
+                      <td class="kv-key"><i class="fa fa-user kv-icon kv-icon-secondary"></i> Registered Users</td>
+                      <td class="kv-value" id="usersCount">Loading... </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div> <!-- /.portlet-body -->
+
+            </div> <!-- /.portlet -->
+            
+          </div> <!-- /.col -->
+
+
+          <div class="col-md-8 col-sm-7">
+            <div class="portlet">
+
+              <h4>Recent News</h4>
+
+              <div class="well">
+                
+                <ul class="icons-list text-md">
+                  <li>
+                    <i class="icon-li fa fa-bullhorn text-success"></i>
+                    <strong>New TLD (.yt) is being added</strong> <i>2014-06-26</i>
+                    <br>
+                    Happy hunting! :)
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-bolt text-danger"></i>
+                    <strong>.eu re-added</strong> <i>2014-06-26</i>
+                    <br>
+                    Because of a mistake... I had to re-add it. :) So, .eu processing just started.<br/>
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-bullhorn text-success"></i>
+                    <strong>New TLDs are being added</strong> <i>2014-06-26</i>
+                    <br>
+                    Let's welcome: .pw / .de / .ie / .eu / .hu (some love for Hungary)<br/>
+                    Happy hunting! :)
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-spinner text-info"></i>
+                    <strong>.org - Processing 3 letter domains (Test)</strong> <i>2014-06-25</i>
+                    <br>
+                    I have just launched a bot on .org. The whois server has a 4 request / minute limitation.
+                    <br>So... do not expect very soon 17576 3letter .org domains. :)<br/>
+                    It will finish within the next ~84 hours.
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-bullhorn text-success"></i>
+                    <strong>.com finished - .net Launched</strong> <i>2014-06-25</i>
+                    <br>
+                    You may noticed, that Stack.xyz started to process .net available/taken domains. Cheers! :)
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-bullhorn text-success"></i>
+                    <strong>Let's welcome: .us / .me</strong> <i>2014-06-23</i>
+                    <br>
+                    As you requested on LowEndTalk, the following TLDs are being added.<br/><i>Please note, that it will take some time to process them, thanks!</i>
+                    <br/><br/>However .im, and .net got delayed, sorry for that.<br/>
+                    .net collecting is currently blocked by whois server's limitations: Maximum Daily connection limit reached. Lookup refused.<br/>So when .com finishes .net starts automatically. (so .NET will be delayed for ~1-2 more day)<br/>.im has some false reporting, working on the new version of the "crawling bot", to avoid what happened with .com (If you missed: ~120 or more .com got reported available by the whois server by mistake.)
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-bolt text-danger"></i>
+                    <strong>Problem with .com domains</strong> <i>2014-06-21</i>
+                    <br>
+                    If you check cm.com by yourself, you will notice that the domain is not taken. However not available for registration. In my previous database it was reported to expire at 2014-05-01. Maybe It is in a pending state.<br>
+                    However there are domains that has a false reporting whois. Check: kbo.com It will finds an owner, but at the end it says: No match for KBO.COM. So Stack adds it to the list, however it is taken. Please report those domains taken. As far as I see, all 2-3-4 letter .coms are taken. Sorry folks... :(<br>
+                    <strong>The report button was not functioning, but now it is fixed.</strong>
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-life-ring text-info"></i>
+                    <strong>Total stats</strong> <i>2014-06-20</i>
+                    <br>
+                    Oh guys, I forgot to mention, that 'Total stats' panel refreshes every 10 seconds...
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-rocket text-danger"></i>
+                    <strong>.co, .ee, .io are under processing...</strong> <i>2014-06-20</i>
+                    <br>
+                    Now we have a lot of 2 chars from .io and .ee
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-check-square text-success"></i>
+                    <strong>2 and 3 letter .com processed</strong> <i>2014-06-14</i>
+                    <br>
+                    It is done. Processing more from this TLD.
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-rocket text-secondary"></i>
+                    <strong>Stack is collecting data...</strong> <i>2014-06-13</i>
+                    <br>
+                    Stack is currently processing domains.
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-check-square text-secondary"></i>
+                    <strong>Stack is up!</strong> <i>2014-06-13</i>
+                    <br>
+                    Stack is up and running!
+                  </li>
+                </ul>
+              </div> <!-- /.well -->          
+
+            </div> <!-- /.portlet -->
+
+          </div> <!-- /.col -->
+
+        </div> <!-- /.row -->
+
+
+    </div> <!-- /.container -->
+
+    <script>
+    $(document).ready(function(){
+      countdomains();
+      count();
+      var auto_refresh = setInterval(
+      function ()
+      {
+        countdomains();
+        count();
+        //ga('send', 'event', 'stats', 'refresh', {'page': '/refresh'});
+      }, 10000);
+      function countdomains(){
+        $(".letters").each(function(){
+          var cb = $(this);
+          $.getJSON("/domain/countLetter?letter="+$(this).data('letter'), null, function(data){
+            cb.text(data.count);
+          });
+        });
+      }
+      function count(){
+        $.getJSON("/user/count", null, function(data){
+          $('#usersCount').text(data.count);
+        });
+        $.getJSON("/domain/count", null, function(data){
+          $('#domainsCount').text(data.count);
+        });
+      }
+    });
+    </script>

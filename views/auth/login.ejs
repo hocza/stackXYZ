@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <title>s<%= sails.config.app.title %></title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Google Font: Open Sans -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300,700">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="/admin/css/font-awesome.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/admin/css/bootstrap.min.css">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/admin/css/mvpready-admin.css">
+  <link rel="stylesheet" href="/admin/css/mvpready-flat.css">
+  <!-- <link href="./css/custom.css" rel="stylesheet">-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="account-bg">
+
+  <header class="navbar navbar-inverse" role="banner">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-cog"></i>
+        </button>
+
+        <a href="/" class="navbar-brand navbar-brand-img">
+          <img src="/admin/img/logo.png" alt="Stack.xyz">
+        </a>
+      </div> <!-- /.navbar-header -->
+
+      <nav class="collapse navbar-collapse" role="navigation">   
+        <ul class="nav navbar-nav navbar-right">     
+          <li>
+            <a href="/"><i class="fa fa-angle-double-left"></i> &nbsp;Back to Home</a>
+          </li>   
+        </ul>
+      </nav>
+
+    </div> <!-- /.container -->
+
+  </header>
+
+  <div class="account-wrapper">
+
+    <div class="account-body">
+
+      <h3>Welcome back to <%= sails.config.app.name %> <%= sails.config.app.version %></h3>
+
+      <h5>Please sign in to get access.</h5>
+
+      <form class="form account-form" method="POST" action="/login" id="loginform">
+                  <%if(messages.login){%>
+                  <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <i class="fa fa-ban-circle"></i><strong><%- messages.login %></strong>
+                  </div>
+                  <%}%>
+                  <%if(messages.register_success){%>
+                  <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong><%- messages.register_success %></strong>
+                  </div>
+                  <%}%>
+
+        <div class="form-group">
+          <label for="login-username" class="placeholder-hidden">Username</label>
+          <input name="username" type="text" class="form-control" id="login-username" placeholder="Username" tabindex="1">
+        </div> <!-- /.form-group -->
+
+        <div class="form-group">
+          <label for="login-password" class="placeholder-hidden">Password</label>
+          <input name="password" type="password" class="form-control" id="login-password" placeholder="Password" tabindex="2">
+        </div> <!-- /.form-group -->
+
+        <div class="form-group clearfix">
+          <!--<div class="pull-left">         
+            <label class="checkbox-inline">
+            <input type="checkbox" class="" value="" tabindex="3"> <small>Remember me</small>
+            </label>
+          </div>
+
+          <div class="pull-right">
+            <small><a href="./account-forgot.html">Forgot Password?</a></small>
+          </div>-->
+        </div> <!-- /.form-group -->
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block btn-lg" tabindex="4">
+            Signin &nbsp; <i class="fa fa-play-circle"></i>
+          </button>
+        </div> <!-- /.form-group -->
+
+      </form>
+
+
+    </div> <!-- /.account-body -->
+
+    <div class="account-footer">
+      <p>
+      Don't have an account? &nbsp;
+      <a href="/signup" class="">Create an Account!</a>
+      </p>
+    </div> <!-- /.account-footer -->
+
+  </div> <!-- /.account-wrapper -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Core JS -->
+<script src="/admin/js/libs/jquery-1.10.2.min.js"></script>
+<script src="/admin/js/libs/bootstrap.min.js"></script>
+
+<!--[if lt IE 9]>
+<script src="./js/libs/excanvas.compiled.js"></script>
+<![endif]-->
+<!-- App JS -->
+<script src="/admin/js/mvpready-core.js"></script>
+<script src="/admin/js/mvpready-admin.js"></script>
+
+<!-- Plugin JS -->
+<script src="/admin/js/mvpready-account.js"></script>
+<script src="/admin/js/bootbox.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $('#loginform').submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+       type: "POST",
+       url: '/login',
+       data: $(this).serialize(),
+       success: function(data)
+       {
+          if (data.message === 'login successful') {
+            bootbox.dialog({
+              message: "Login was successful!",
+              title: "Successful",
+              className:"modal-styled",
+              buttons: {
+                success: {
+                  label: "Ok",
+                  className: "btn-success",
+                  callback: function() {
+                    window.location.replace('/');
+                  }
+                }
+              }
+            });
+          }
+          else {
+            bootbox.alert("<h1>Oh oh, something went wrong!</h1><br/>The error maybe the following (if not, report me the problem please at jozsef@hocza.com):<br/>"+data.message, function() {});
+          }
+       }
+   });
+ });
+});
+</script>
+
+</body>
+</html>

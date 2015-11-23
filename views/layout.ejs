@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <title><%= sails.config.app.title %></title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Google Font: Open Sans -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300,700">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="/admin/css/font-awesome.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/admin/css/bootstrap.min.css">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/admin/css/mvpready-admin.css">
+  <link rel="stylesheet" href="/admin/css/mvpready-flat.css">
+  <!-- <link href="/admin/css/custom.css" rel="stylesheet">-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Core JS -->
+  <script src="/admin/js/libs/jquery-1.10.2.min.js"></script>
+  <script src="/admin/js/libs/bootstrap.min.js"></script>
+  <script src="/admin/js/bootbox.min.js"></script>
+  <script src="/admin/js/jquery.jsontotable.min.js"></script>
+</head>
+
+<body class=" ">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52319418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<div id="wrapper">
+
+  <header class="navbar navbar-inverse" role="banner">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-cog"></i>
+        </button>
+
+        <a href="/" class="navbar-brand navbar-brand-img">
+          <img src="/admin/img/logo.png" alt="Stack.xyz">
+        </a>
+      </div> <!-- /.navbar-header -->
+
+
+      <nav class="collapse navbar-collapse" role="navigation">
+
+        <ul class="nav navbar-nav noticebar navbar-left">
+
+          <li class="dropdown">
+            <a href="/admin/page-notifications.html" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell"></i>
+              <span class="navbar-visible-collapsed">&nbsp;Notifications&nbsp;</span>
+              <!--<span class="badge badge-primary">3</span>-->
+            </a>
+
+            <ul class="dropdown-menu noticebar-menu noticebar-hoverable" role="menu">
+              <li class="nav-header">
+                <div class="pull-left">
+                  Notifications
+                </div>
+
+                <div class="pull-right">
+                  <!--<a href="javascript:;">Mark as Read</a>-->
+                </div>
+              </li>
+
+              <li class="noticebar-empty">                  
+                <h4 class="noticebar-empty-title">No notifications here.</h4>
+                <p class="noticebar-empty-text">Maybe later!</p>                
+              </li>
+
+              <!--<li class="noticebar-menu-view-all">
+                <a href="/admin/page-notifications.html">View All Notifications</a>
+              </li>-->
+            </ul>
+          </li>
+
+
+
+
+          <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-exclamation-triangle"></i>
+              <span class="navbar-visible-collapsed">&nbsp;Alerts&nbsp;</span>
+            </a>
+
+            <ul class="dropdown-menu noticebar-menu noticebar-hoverable" role="menu">                
+              <li class="nav-header">
+                <div class="pull-left">
+                  Alerts
+                </div>
+              </li>
+
+              <li class="noticebar-empty">                  
+                <h4 class="noticebar-empty-title">No alerts here.</h4>
+                <p class="noticebar-empty-text">Check out what other makers are doing on Explore!</p>                
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+
+
+        <ul class="nav navbar-nav navbar-right">       
+
+          <li class="dropdown navbar-profile">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+              <img src="/admin/img/avatars/icon-user.png" class="navbar-profile-avatar" alt="">
+              <span class="navbar-profile-label2"><%= req.user.username %> &nbsp;</span>
+              <i class="fa fa-caret-down"></i>
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+
+              <li>
+                <a href="/admin/page-settings.html">
+                  <i class="fa fa-cogs"></i> 
+                  &nbsp;&nbsp;Settings
+                </a>
+              </li>
+
+              <li class="divider"></li>
+
+              <li>
+                <a href="/logout">
+                  <i class="fa fa-sign-out"></i> 
+                  &nbsp;&nbsp;Logout
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div> <!-- /.container -->
+
+  </header>
+
+
+  <div class="mainnav">
+
+    <div class="container">
+
+      <a class="mainnav-toggle" data-toggle="collapse" data-target=".mainnav-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars"></i>
+      </a>
+
+      <nav class="collapse mainnav-collapse" role="navigation">
+<!--
+        <form class="mainnav-form pull-right" role="search">
+          <input type="text" class="form-control input-md mainnav-search-query" placeholder="Search">
+          <button class="btn btn-sm mainnav-form-btn"><i class="fa fa-search"></i></button>
+        </form>-->
+
+        <ul class="mainnav-menu" id="mainmenu">
+
+          <li class="dropdown">
+          	<a href="/">
+          	Dashboard
+          	</a>
+          </li>
+          <li class="dropdown">
+            <a href="/dashboard/domainAvailable">
+            Free domains
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="/dashboard/domainExpiring">
+            Expiring domains
+            </a>
+          </li>
+
+
+        </ul>
+
+      </nav>
+
+    </div> <!-- /.container -->
+
+  </div> <!-- /.mainnav -->
+
+  <div class="content">
+
+    <%- body %>
+
+  </div> <!-- .content -->
+
+</div> <!-- /#wrapper -->
+
+<footer class="footer">
+  <div class="container">
+    <p class="pull-left">Copyright &copy; 2014 Jozsef Hocza - Stack.xyz - <%= sails.config.app.name %> v<%= sails.config.app.version %></p>
+  </div>
+</footer>
+
+
+
+
+<!--[if lt IE 9]>
+<script src="/admin/js/libs/excanvas.compiled.js"></script>
+<![endif]-->
+
+<!-- Plugin JS -->
+<script src="/admin/js/plugins/flot/jquery.flot.js"></script>
+<script src="/admin/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="/admin/js/plugins/flot/jquery.flot.pie.js"></script>
+<script src="/admin/js/plugins/flot/jquery.flot.resize.js"></script>
+
+<!-- App JS -->
+<script src="/admin/js/mvpready-core.js"></script>
+<script src="/admin/js/mvpready-admin.js"></script>
+
+<!-- Plugin JS -->
+
+<script>
+$(document).ready(function() {
+  $(function(){
+      var path = window.location.pathname;
+      $('#mainmenu li a[href="'+path+'"]').parents('li').addClass('active');
+      $('a[href="/logout"]').on('click', function(e){
+        e.preventDefault();
+        $.get(this.href, function(res){
+          bootbox.dialog({
+            message: res,
+            title: "Success",
+            className:"modal-styled",
+            buttons: {
+              success: {
+                label: "Ok",
+                className: "btn-success",
+                callback: function() {
+                  window.location.replace('/');
+                }
+              }
+            }
+          });
+        });
+      });
+  });
+});
+</script>
+
+</body>
+</html>
